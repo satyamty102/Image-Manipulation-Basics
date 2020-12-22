@@ -1,0 +1,14 @@
+var img = new SimpleImage(200,200);         // create an Image using a predefined library SimpleImage (only for Duke Learn To program platform)
+print(img);
+print(img.getPixel(0,0,));                  // pixel at axes (0,0)
+
+for (var pixel of img.values())             // initiating a for loop with variable pixel in the image (img.values : gives all the pixel in the image)
+{
+    var newR = 120 + pixel.getRed();        // getRed : gets the pixel value for red  
+    pixel.setRed(newR);                     // setRed : set the pixel value of red
+    var newB = 10 + pixel.getBlue();
+    pixel.setBlue(newB);
+}
+
+print(img.getPixel(0,0));
+print(img);
