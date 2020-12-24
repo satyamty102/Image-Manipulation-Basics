@@ -1,0 +1,38 @@
+var img = new SimpleImage(40,40)
+print(img);
+for (var pixels of img.values())
+{
+    if (pixels.getX()<=img.getWidth()/2)
+    {
+       if(pixels.getY() <= img.getWidth()/2)
+       {
+           pixels.setRed(255+pixels.getRed());
+            pixels.setGreen(255+pixels.getGreen());
+             pixels.setBlue(255+pixels.getBlue());
+       }
+       else
+       {
+            pixels.setBlue(255+pixels.getBlue());
+       }
+    }
+    
+     if (pixels.getX()>=img.getWidth()/2)
+    {
+       if(pixels.getY() >= img.getWidth()/2)
+       {
+           pixels.setRed(255+pixels.getRed());
+            pixels.setGreen(255+pixels.getGreen());
+             pixels.setBlue(255+pixels.getBlue());
+       }
+       else
+       {
+            pixels.setBlue(255+pixels.getBlue());
+            
+       }
+    }
+    
+   
+    
+  
+}
+print(img);
