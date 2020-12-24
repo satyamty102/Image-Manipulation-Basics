@@ -1,0 +1,38 @@
+//function
+
+function swapRedGreen(pixel)
+{
+    for (var pixels of img.values())
+    {
+        newR = pixels.getRed();
+        newG = pixels.getGreen();
+        
+         pixels.setGreen(newR);
+         pixels.setRed(newG);
+        
+        
+    }
+}
+
+
+//full code
+
+var img = new SimpleImage(40,40);
+print (img);
+
+for (var pixels of img.values())
+{
+    if (pixels.getX() <= img.getWidth()/2)
+    {
+    pixels.setRed(255+pixels.getRed());
+    
+    }
+    else
+    {
+        pixels.setGreen(255+pixels.getGreen());
+    }
+    
+}
+print(img);
+swapRedGreen();
+print(img);
