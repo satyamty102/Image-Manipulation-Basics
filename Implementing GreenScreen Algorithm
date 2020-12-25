@@ -1,0 +1,27 @@
+var fgImage = new SimpleImage("drewRobert.png");
+fgImage.setSize(320,226);       //adjusting the size of the foreground image
+
+var bgImage = new SimpleImage("smallhands.png");
+//creating an blank image of same size as of fgImage and bgImage
+var output = new SimpleImage(fgImage.getWidth(), fgImage.getHeight());
+
+
+
+for (var pixels of fgImage.values())
+{
+    
+    if (pixels.getGreen()>pixels.getRed()+pixels.getBlue())
+    {
+        var x = pixels.getX();
+        var y = pixels.getY();
+        var bgPixel = bgImage.getPixel(x, y);
+        output.setPixel(x,y,bgPixel);       //setting the output as corresponding pixels as the bgImage at each particular coordinates (x,y) 
+    }
+    
+    else
+    {
+        output.setPixel(pixels.getX(),pixels.getY(),pixels);
+        
+    }
+}
+print(output);
